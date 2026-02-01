@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body { text-align: center; font-family: 'Arial', sans-serif; background-color: #ffe6e6; }
+        #valentineQuestion { font-size: 2em; margin-top: 50px; }
+        .button-container { margin-top: 30px; }
+        button { font-size: 1.2em; padding: 10px 20px; cursor: pointer; margin: 10px; }
+        #yesBtn { background-color: #ff4d4d; color: white; border: none; border-radius: 5px; }
+        #noBtn { background-color: #ccc; border: none; border-radius: 5px; position: absolute; }
+    </style>
+</head>
+<body>
+    <div id="valentineQuestion">Will you be my Valentine? ❤️</div>
+    <div class="button-container">
+        <button id="yesBtn" onclick="acceptProposal()">Yes</button>
+        <button id="noBtn" onmouseover="moveButton()">No</button>
+    </div>
+
+    <script>
+        function acceptProposal() {
+            document.body.innerHTML = "<h1>Yay! 😍 You made me the happiest person! ❤️</h1>";
+        }
+
+        function moveButton() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            document.getElementById('noBtn').style.left = x + 'px';
+            document.getElementById('noBtn').style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
